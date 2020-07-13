@@ -1,5 +1,3 @@
-# MEANDEMOAPI
-
 # MEAN DEMO - API Backend 
 ## A demonstration application - JRoysdon (July 2020)
 
