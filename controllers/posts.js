@@ -7,6 +7,8 @@ exports.createPost = (req, res, next) => {
     content: req.body.content,
     imagePath: url + "/images/" + req.file.filename,
     fileName: req.file.filename,
+    createDate: Date.now(),
+    editDate: Date.now(),
     creator: req.wizardData.wizardId
   });
   post
@@ -40,6 +42,8 @@ exports.updatePost = (req, res, next) => {
     content: req.body.content,
     imagePath: imagePath,
     fileName: fileName,
+    editDate: Date.now(),
+
     creator: req.wizardData.wizardId
   });
   Post.updateOne({ _id: req.params.id, creator: req.wizardData.wizardId }, post)
@@ -65,10 +69,10 @@ exports.getPosts = (req, res, next) => {
   if (pageSize && currentPage) {
     postQuery.skip(pageSize * (currentPage - 1)).limit(pageSize);
   }
-  postQuery
+  postQuery.populate('creator', 'firstname')
     .then(documents => {
       fetchedPosts = documents;
-      return Post.count();
+      return Post.countDocuments();
     })
     .then(count => {
       res.status(200).json({
@@ -85,7 +89,7 @@ exports.getPosts = (req, res, next) => {
 };
 
 exports.getPost = (req, res, next) => {
-  Post.findById(req.params.id)
+  Post.findById(req.params.id).populate('creator','firstname')
     .then(post => {
       if (post) {
         res.status(200).json(post);
