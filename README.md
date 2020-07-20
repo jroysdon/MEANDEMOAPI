@@ -8,7 +8,7 @@ The live Demo can be found here: http://meandemoforjim.s3-website-us-east-1.amaz
 This code is to show I can work in the **MEAN** full stack: 
 
 * Mongo (and other NoSQL databases), though I also have worked in Relational DBs)
-* Express (to se up micro services)
+* Express (to serve  up micro services)
 * Angular (the Front End)
 * NodeJS (the back end)
 
