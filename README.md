@@ -1,7 +1,7 @@
 # MEAN DEMO - API Backend 
 ## A demonstration application - JRoysdon (July 2020)
 
-I wrote this through a course in **MEAN** Development. This is the back end written in Mongo/Express/Node. The front end Agular portion can be found here: https://github.com/jroysdon/MEANDEMOAngular
+I wrote this through a course in **MEAN** Development. This is the back end written in Mongo/Express/Node. The front end Angular portion can be found here: https://github.com/jroysdon/MEANDEMOAngular
 
 The live Demo can be found here: http://meandemoforjim.s3-website-us-east-1.amazonaws.com
 
